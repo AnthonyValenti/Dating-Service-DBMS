@@ -59,7 +59,7 @@ public class Database {
         Connection conn1 = null;
 
         try {
-            String dbURL1 = "jdbc:oracle:thin:alvalent/06128260@oracle.scs.ryerson.ca:1521:orcl";  // that is school Oracle database and you can only use it in the labs
+            String dbURL1 = "jdbc:oracle:thin:user/password@oracle.scs.ryerson.ca:1521:orcl";  // that is school Oracle database and you can only use it in the labs
             conn1 = DriverManager.getConnection(dbURL1);
             String query = "select NAME,PASSWORD from USERDB";
 
@@ -97,7 +97,7 @@ public class Database {
         Connection conn1 = null;
         int userId = 0;
         try {
-            String dbURL1 = "jdbc:oracle:thin:alvalent/06128260@oracle.scs.ryerson.ca:1521:orcl";  // that is school Oracle database and you can only use it in the labs
+            String dbURL1 = "jdbc:oracle:thin:user/password@oracle.scs.ryerson.ca:1521:orcl";  // that is school Oracle database and you can only use it in the labs
             conn1 = DriverManager.getConnection(dbURL1);
             try (Statement stmt = conn1.createStatement()) {
                 ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM userDB");
@@ -132,7 +132,7 @@ public class Database {
         Connection conn1 = null;
         int userId = 0;
         try {
-            String dbURL1 = "jdbc:oracle:thin:alvalent/06128260@oracle.scs.ryerson.ca:1521:orcl";  // that is school Oracle database and you can only use it in the labs
+            String dbURL1 = "jdbc:oracle:thin:user/password@oracle.scs.ryerson.ca:1521:orcl";  // that is school Oracle database and you can only use it in the labs
             conn1 = DriverManager.getConnection(dbURL1);
             try (Statement stmt = conn1.createStatement()) {
                 ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM userDB");
@@ -166,7 +166,7 @@ public class Database {
     public void editMatchingReq(String gender_pref, int maxKm, int minAge, int maxAge) throws Exception {
         Connection conn1 = null;
         try {
-            String dbURL1 = "jdbc:oracle:thin:alvalent/06128260@oracle.scs.ryerson.ca:1521:orcl";  // that is school Oracle database and you can only use it in the labs
+            String dbURL1 = "jdbc:oracle:thin:user/password@oracle.scs.ryerson.ca:1521:orcl";  // that is school Oracle database and you can only use it in the labs
             conn1 = DriverManager.getConnection(dbURL1);
             String insertMatchReq = "UPDATE MATCHING_REQUIREMENTS SET GENDER_PREF='" + gender_pref + "', MAX_KM=" + maxKm + ", MIN_AGE=" + minAge + ", MAX_AGE=" + maxAge + " WHERE user_id= " + currUserId + "";
             try (Statement stmt = conn1.createStatement()) {
@@ -193,7 +193,7 @@ public class Database {
         Connection conn1 = null;
         int userId = 0;
         try {
-            String dbURL1 = "jdbc:oracle:thin:alvalent/06128260@oracle.scs.ryerson.ca:1521:orcl";  // that is school Oracle database and you can only use it in the labs
+            String dbURL1 = "jdbc:oracle:thin:user/password@oracle.scs.ryerson.ca:1521:orcl";  // that is school Oracle database and you can only use it in the labs
             conn1 = DriverManager.getConnection(dbURL1);
             try (Statement stmt = conn1.createStatement()) {
                 ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM userDB");
@@ -230,7 +230,7 @@ public class Database {
         int minAge = 0;
         int maxAge = 0;
         try {
-            String dbURL1 = "jdbc:oracle:thin:alvalent/06128260@oracle.scs.ryerson.ca:1521:orcl";  // that is school Oracle database
+            String dbURL1 = "jdbc:oracle:thin:user/password@oracle.scs.ryerson.ca:1521:orcl";  // that is school Oracle database
             conn1 = DriverManager.getConnection(dbURL1);
             String getReq = "SELECT gender_pref, min_age, max_age FROM MATCHING_REQUIREMENTS WHERE user_id=" + currUserId + "";
             try (Statement stmt = conn1.createStatement()) {
@@ -271,7 +271,7 @@ public class Database {
     public void deleteAcc() {
         Connection conn1 = null;
         try {
-            String dbURL1 = "jdbc:oracle:thin:alvalent/06128260@oracle.scs.ryerson.ca:1521:orcl";  // that is school Oracle database
+            String dbURL1 = "jdbc:oracle:thin:user/password@oracle.scs.ryerson.ca:1521:orcl";  // that is school Oracle database
             conn1 = DriverManager.getConnection(dbURL1);
             String deleteReq = "DELETE FROM MATCHING_REQUIREMENTS WHERE user_id=" + currUserId + "";
             String deleteComp = "DELETE FROM MATCHING_COMPATIBILITY WHERE user_id=" + currUserId + "";
