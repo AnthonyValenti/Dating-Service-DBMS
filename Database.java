@@ -28,7 +28,7 @@ public class Database {
         Connection conn1 = null;
         int temp = 0;
         try {
-            String dbURL1 = "jdbc:oracle:thin:alvalent/06128260@oracle.scs.ryerson.ca:1521:orcl";  // that is school Oracle database and you can only use it in the labs
+            String dbURL1 = "jdbc:oracle:thin:user/password@oracle.scs.ryerson.ca:1521:orcl";  // that is school Oracle database and you can only use it in the labs
             conn1 = DriverManager.getConnection(dbURL1);
             String query = "select user_id from USERDB WHERE userdb.name='" + name + "'and userdb.password='" + password + "'";
             try (Statement stmt = conn1.createStatement()) {
